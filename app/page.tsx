@@ -42,7 +42,7 @@ export default function Home() {
               ? "Oʻrnatishda muammo bormi? Texnik qo'llab-quvvatlash guruhimizga murojaat qiling."
               : "Возникли проблемы с установкой? Напишите нам в техническую поддержку"}{" "}
             <u>
-              <Link href={"https://t.me/plugVZ"}>Telegram</Link>
+              <Link href={"https://google.com"}>Telegram</Link>
             </u>
             .
           </p>
