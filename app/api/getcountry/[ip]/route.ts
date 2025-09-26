@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ApiError, apiCountry } from "../../api";
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { ip: string } }
-) {
+interface Props {
+  params: Promise<{ ip: string }>;
+}
+
+export async function GET(req: NextRequest, params: Props) {
   try {
-    const { ip } = await params;
+    const ip = await params;
     const res = await apiCountry.get(`/json/${ip}`);
     return NextResponse.json(res.data);
   } catch (err) {
