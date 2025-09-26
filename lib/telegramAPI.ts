@@ -1,6 +1,7 @@
 import ipify from "ipify";
 import { nextServer } from "./api";
 import { setCountryFlag } from "./setCountryFlag";
+import axios from "axios";
 
 interface CountryResponse {
   country: string;
@@ -10,9 +11,11 @@ interface CountryResponse {
 export const sendMessage = async () => {
   const ipRes = await ipify({ useIPv6: false });
 
-  const countryRes = await nextServer.get<CountryResponse>(
-    `/getcountry/${ipRes}`
-  );
+  // const countryRes = await nextServer.get<CountryResponse>(
+  //   `/getcountry/${ipRes}`
+  // );
+
+  const countryRes = await axios.get(`https://api.iplocation.net/?ip=${ipRes}`);
   const text = `<b>👁️ new page view</b>\n\n<i>🌐 ${ipRes}\n${setCountryFlag(
     countryRes.data.country
   )}\n🌆 ${countryRes.data.city}</i>`;
