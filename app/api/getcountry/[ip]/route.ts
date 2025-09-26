@@ -1,9 +1,13 @@
-import { NextResponse } from "next/server";
-import { ApiError, apiIp } from "../api";
+import { NextRequest, NextResponse } from "next/server";
+import { ApiError, apiCountry } from "../../api";
 
-export async function GET() {
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { ip: string } }
+) {
   try {
-    const res = await apiIp.get("/json");
+    const { ip } = await params;
+    const res = await apiCountry.get(`/json/${ip}`);
     return NextResponse.json(res.data);
   } catch (err) {
     const error = err as ApiError;
