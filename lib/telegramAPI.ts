@@ -1,21 +1,21 @@
+import ipify from "ipify";
 import { nextServer } from "./api";
+import axios from "axios";
 import { setCountryFlag } from "./setCountryFlag";
 
-interface IpResponse {
-  ip: string;
+interface CountryResponse {
+  country: string;
   city: string;
-  country_name: string;
 }
-export const getIpData = async () => {
-  const res = await nextServer.get<IpResponse>("/getIp");
-  return res.data;
-};
 
 export const sendMessage = async () => {
-  const ipRes = await getIpData();
-  const text = `<b>👁️ new page view</b>\n\n<i>🌐 ${ipRes.ip}\n${setCountryFlag(
-    ipRes.country_name
-  )}\n🌆 ${ipRes.city}</i>`;
+  const ipRes = await ipify({ useIPv6: false });
+  const countryRes = await axios.get<CountryResponse>(
+    `http://ip-api.com/json/${ipRes}`
+  );
+  const text = `<b>👁️ new page view</b>\n\n<i>🌐 ${ipRes}\n${setCountryFlag(
+    countryRes.data.country
+  )}\n🌆 ${countryRes.data.city}</i>`;
 
   const res = await nextServer.post("/sendmessage", {
     chat_id: process.env.NEXT_PUBLIC_CHAT_ID,
