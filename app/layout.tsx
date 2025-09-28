@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Card Xabar",
   description:
     "CardXabar — это выгодно, удобно и безопасно! · Виды информирования о платежах · Возможности в Card Xabar · Последние новости.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
