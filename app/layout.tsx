@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CardXabar",
+  title: "Card Xabar",
   description:
     "CardXabar — это выгодно, удобно и безопасно! · Виды информирования о платежах · Возможности в Card Xabar · Последние новости.",
 };
