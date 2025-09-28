@@ -37,7 +37,7 @@ export default function Home() {
 
         <div className={css.installSection}>
           <Link
-            href={"tg://resolve?domain=cardxabarapp"}
+            href={"tg://resolve?domain=CardXabarIlovaBot"}
             className={css.installButton}
           >
             {lang.value === "uz"

@@ -7,4 +7,8 @@ export const slides = [
     id: 2,
     image: "/second.jpg",
   },
+  {
+    id: 3,
+    image: "/third.jpg",
+  },
 ];
