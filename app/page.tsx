@@ -12,9 +12,8 @@ export default function Home() {
   return (
     <div className={css.container}>
       <div className={css.content}>
-        <div>
-          <ImagesSwiper />
-        </div>
+        <ImagesSwiper />
+
         <ol className={css.steps}>
           <li className={css.step}>
             {lang.value === "uz"
@@ -23,8 +22,16 @@ export default function Home() {
           </li>
           <li className={css.step}>
             {lang.value === "uz"
-              ? `Yuklab olingandan so'ng: faylni oching`
-              : "После загрузки: Откройте файл"}
+              ? `Telegram botiga “/start” ni yuboring`
+              : "Отправьте /start в телеграм бот"}
+          </li>
+          <li className={css.step}>
+            {lang.value === "uz" ? `Faylni oching` : "Откройте файл"}
+          </li>
+          <li className={css.step}>
+            {lang.value === "uz"
+              ? `Sovrin va sovg'alaringizni yig'ing!`
+              : "Заберите свои призы и подарки!"}
           </li>
         </ol>
 
@@ -34,7 +41,7 @@ export default function Home() {
             className={css.installButton}
           >
             {lang.value === "uz"
-              ? "Ilovani o'rnating"
+              ? "Ilovani o'rnatish"
               : "Установить приложение"}
           </Link>
           <p className={css.supportText}>

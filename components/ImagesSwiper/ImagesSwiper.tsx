@@ -1,4 +1,3 @@
-// components/ImageSlider/ImageSlider.tsx
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,16 +6,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import css from "./ImagesSwiper.module.css";
-const slides = [
-  {
-    id: 1,
-    image: "/xabar-logo.jpeg", // Замени на свои пути к фото
-  },
-  {
-    id: 2,
-    image: "/xabar-logo.jpeg", // Замени на свои пути к фото
-  },
-];
+import { slides } from "@/lib/slides";
 
 export default function ImageSlider() {
   return (
@@ -43,7 +33,6 @@ export default function ImageSlider() {
                 alt={"logo"}
                 fill
                 className={css.image}
-                sizes="(max-width: 768px) 100vw, 400px"
               />
             </div>
           </SwiperSlide>

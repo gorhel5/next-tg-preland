@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CardXabar Ilova",
+  title: "CardXabar",
   description:
-    "Получайте информацию о платежах по банковским картам Uzcard в своем приложении! контролируйте баланс 24/7!",
+    "CardXabar — это выгодно, удобно и безопасно! · Виды информирования о платежах · Возможности в Card Xabar · Последние новости.",
 };
 
 export default function RootLayout({
