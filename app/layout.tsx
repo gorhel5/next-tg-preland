@@ -4,6 +4,7 @@ import "./globals.css";
 import TelegramNotifier from "@/components/TelegramNotifier/TelegramNotifier";
 import Header from "@/components/Header/Header";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import FacebookPixel from "@/components/FacebookPixel/FacebookPixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "CardXabar — это выгодно, удобно и безопасно! · Виды информирования о платежах · Возможности в Card Xabar · Последние новости.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/faviconchik.ico",
   },
 };
 
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <FacebookPixel />
         <TelegramNotifier />
         <SpeedInsights />
         <Header />
